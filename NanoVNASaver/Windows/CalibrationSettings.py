@@ -788,6 +788,7 @@ class CalibrationWindow(QtWidgets.QWidget):
 
         if self.nextStep == 4:
             # Done
+            self.cal_save("thrurefl")
             self.cal_save("through")
             apply_step = QtWidgets.QMessageBox(
                 QtWidgets.QMessageBox.Information,

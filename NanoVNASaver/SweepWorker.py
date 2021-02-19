@@ -213,10 +213,12 @@ class SweepWorker(QtCore.QRunnable):
             data11 = raw_data11
 
         if self.app.calibration.isValid2Port():
-            for dp in raw_data21:
-                data21.append(self.app.calibration.correct21(dp))
+            for counter, dp in enumerate(raw_data21):
+                dp11 = raw_data11[counter]
+                data21.append(self.app.calibration.correct21(dp, dp11))
         else:
             data21 = raw_data21
+
         return data11, data21
 
     def readAveragedSegment(self, start, stop, averages=1):

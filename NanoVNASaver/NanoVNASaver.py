@@ -661,7 +661,7 @@ class NanoVNASaver(QtWidgets.QWidget):
 
         if s21data:
             min_gain = min(s21data, key=lambda data: data.gain)
-            max_gain = min(s21data, key=lambda data: data.gain)
+            max_gain = max(s21data, key=lambda data: data.gain)
             self.s21_min_gain_label.setText(
                 f"{format_gain(min_gain.gain)}"
                 f" @ {format_frequency(min_gain.freq)}")
