@@ -568,7 +568,7 @@ class CalibrationWindow(QtWidgets.QWidget):
         if not self.app.calibration.isValid1Port():
             return
         for i, name in enumerate(
-                ("short", "open", "load", "through", "isolation")):
+                ("short", "open", "load", "through", "isolation", "thrurefl")):
             self.cal_label[name].setText(
                 _format_cal_label(self.app.calibration.data_size(name), "Loaded"))
             if i == 2 and not self.app.calibration.isValid2Port():
